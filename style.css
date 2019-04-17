@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+:root{
+  --main-bg:linear-gradient(to left,#a83e00, #b94b02, rgb(219, 119, 4), rgb(233, 108, 7));
+  --white:#fff;
+  --light-brown:rgba(94, 41, 6, 0.747);
+  --semi-brown:rgba(48, 20, 1, 0.747);
+  --yellow:#ec944c;
+  --green:#45a872;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  background: var(--main-bg);
+  color:var(--white);
+}
+
+.box{
+  position: relative;
+  top:25vh;
+  width: 600px;
+  padding: 40px;
+  background:var(--light-brown);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.box h1{
+  font-weight: 500;
+}
+
+.box input[type = "text"],
+.box input[type = "number"]{
+  border:0;
+  background: none;
+  display:block;
+  margin: 20px auto;
+  text-align: center;
+  border:2px solid var(--yellow);
+  color:var(--white);
+  outline: none;
+  padding: 14px 10px;
+  width: 250px;
+  border-radius: 24px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  transition: .25s;
+}
+
+.box input[type = "text"]:focus,
+.box input[type = "number"]:focus{
+  width: 280px;
+  border-color: var(--green);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+::placeholder{
+  color:var(--white);
+  font-family: 'Josefin Sans', sans-serif;
+  opacity: .5;
+}
+
+.buttons{
+  display: flex;
+  width: 450px;
+  margin: 0 auto;
+  margin-top: -10px;
+}
+
+button{
+  border:0;
+  background: none;
+  display:block;
+  margin: 20px auto;
+  text-align: center;
+  border:2px solid var(--green);
+  color:var(--white);
+  outline: none;
+  padding: 14px 40px;
+  width: 166px;
+  border-radius: 24px;
+  font-family: 'Josefin Sans', sans-serif;
+  transition: .25s;
+  cursor: pointer;
+}
+
+button:hover{
+  background: var(--green);
+}
+
+.box:hover{
+  background:var(--semi-brown);
+  transition: .3s linear;
+}
+
+.wrap{
+  margin-left: 50px;
+}
+
+.users{
+  width: 700px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding-top: 25vh;
+}
+
+.users-card{
+  display: flex;
+  flex-direction: column;
+  background: var(--light-brown);
+  color: var(--white);
+  font-size: 24px;
+  width: 300px;
+  margin: 10px;
+}
+
+.users-card p {
+  padding-left:15px;
+}
+
+.users-card:hover{
+  background:var(--semi-brown);
+  transition: .3s linear;
+}
