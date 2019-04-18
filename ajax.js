@@ -31,12 +31,19 @@ const removeUser = async (userId, userCancel) => {
     }
 };
 
+const userValid = (userName,userAge) =>{
+    if (userName == '' || userAge == '') {
+        return false;
+    } 
+    return true;
+}
+
 const createUser = () => {
     const userName = document.querySelector('.name').value;
     const userAge = document.querySelector('.age').value;
-    if (userName == '' || userAge == '') {
-        return false;
-    }
+   if(!userValid(userName,userAge)){
+        return
+   }
     fetch(URL + 'users', {
         method: 'POST',
         body: JSON.stringify({
@@ -55,16 +62,25 @@ const createUser = () => {
     })
 };
 
-const renderElements = (item) => {
+const createUsers = (item) =>{
     const createUser = document.createElement('div');
     createUser.classList.add('users-card');
     createUser.innerHTML = `<p>Name: ${item.name}</p> <p>Age: ${item.age}</p>`;
+    return createUser;
+}
 
+const deleteUser = (remove,item)=>{
     const btnRemoveUser = document.createElement('button');
     btnRemoveUser.innerHTML = 'Close';
     btnRemoveUser.addEventListener('click', () => {
-        removeUser(item.id, createUser);
+        removeUser(item.id, remove);
     });
+    return btnRemoveUser;
+}
+
+const renderElements = (item) => {
+const createUser = createUsers(item);   
+const btnRemoveUser = deleteUser(createUser,item);
     createUser.append(btnRemoveUser);
     container.append(createUser);
 };
